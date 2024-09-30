@@ -1,0 +1,26 @@
+{
+    "type": "module",
+    "name": "Gtfs2Gpx",
+    "description": "",
+    "main": "bin/index.js",
+    "version": "1.0.0",
+    "keywords": [],
+     "devDependencies": {
+        "eslint": "latest",
+        "grunt": "latest",
+        "grunt-eslint": "latest",
+        "grunt-essimpledoc": "latest",
+        "grunt-wwwouaiebe-buildnumber": "latest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wwwouaiebe/GtfsMySql2Json.git"
+    },
+    "scripts": {
+        "debug": "node node_modules/grunt/bin/grunt"
+     },
+    "author": "wwwouaiebe",
+    "license": "GPL-3.0",
+    "sources": "https://github.com/wwwouaiebe/GtfsMySql2Json",
+    "homepage": "https://github.com/wwwouaiebe/GtfsMySql2Json#readme"
+}

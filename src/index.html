@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+/*
+This  program is free software;
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation;
+either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+-->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>wwwouaiebe - Gtfs To Gpx</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body class="cyLight">
+        <header id="configForm">
+             <label>Network: 
+                <select id="NetworkSelect">
+                    <option value="TECB">TECB</option>
+                    <option value="TECC">TECC</option>
+                    <option value="TECH">TECH</option>
+                    <option value="TECL">TECL</option>
+                    <option value="TECX">TECX</option>
+                    <option value="STIB">STIB</option>
+                </select>
+            </label>
+            <span> <a id="cyDarkLight" title="Apparence: sombre">☽</a> </span>
+            <div id="waitAnimation"><div id="waitAnimationBullet"></div></div>
+       </header>
+        <main id="gpx">
+        </main>
+        <footer>
+            <p><span>Sorry, we don't have cookies 🍪🍪🍪 for you...</span> <span>© wwwouaiebe 2024</span> <span><a href="https://github.com/wwwouaiebe/Gtfs2Gpx">Sources on Github ↗</a></span><span id="version"></span></span></p>
+        </footer>
+    </body>
+    <script src="index.js" type="module" crossorigin="anonymous"> </script>
+</html>
