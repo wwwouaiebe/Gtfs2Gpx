@@ -1,8 +1,48 @@
+/*
+Copyright - 2024 - wwwouaiebe - Contact: https://www.ouaie.be/
+
+This  program is free software;
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation;
+either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+/*
+Changes:
+	- v1.0.0:
+		- created
+*/
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
 import PolylineEncoder from './PolylineEncoder.js';
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/**
+ * Coming soon
+ */
+/* ------------------------------------------------------------------------------------------------------------------------- */
 
 class GpxFactory {
 
+	/**
+	 * Coming soon
+	 * @type {Object}
+	 */
+
 	#route;
+
+	/**
+	 * Coming soon
+	 * @type {String}
+	 */
 
 	#routeMasterName;
 
@@ -56,6 +96,14 @@ class GpxFactory {
 	static get #TAB4 ( ) { return '\n\t\t\t\t'; }
 
 	/**
+	Simple constant for polyline decompression
+	@type {Number}
+	*/
+
+	// eslint-disable-next-line no-magic-numbers
+	static get #polylinePrecision ( ) { return 6; }
+
+	/**
 	Creates the header of the gpx file
 	*/
 
@@ -68,6 +116,10 @@ class GpxFactory {
 		'xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" ' +
 		'version="1.1" creator="TravelNotes">';
 	}
+
+	/**
+	Creates the footer of the gpx file
+	*/
 
 	#addFooter ( ) {
 		this.#gpxString += GpxFactory.#TAB0 + '</gpx>';
@@ -123,7 +175,10 @@ class GpxFactory {
 			'</name>';
 		this.#gpxString += GpxFactory.#TAB2 + '<trkseg>';
 
-		const routeNodes = new PolylineEncoder ( ).decode ( this.#route.nodes, [ 6, 6 ] );
+		const routeNodes = new PolylineEncoder ( ).decode (
+			this.#route.nodes,
+			[ GpxFactory.#polylinePrecision, GpxFactory.#polylinePrecision ]
+		);
 
 		routeNodes.forEach (
 			routeNode => {
@@ -179,6 +234,11 @@ class GpxFactory {
 		this.#saveFile ( fileName, this.#gpxString, 'application/xml' );
 	}
 
+	/**
+	 * Coming soon
+	 * @param {Array} routeInfo Coming soon
+	 */
+
 	buildGpx ( routeInfo ) {
 		this.#routeMasterName = routeInfo [ 0 ];
 		this.#route = routeInfo [ 1 ];
@@ -191,9 +251,15 @@ class GpxFactory {
 		this.#saveGpxToFile ( );
 	}
 
+	/**
+	 * The constructor
+	 */
+
 	constructor ( ) {
 		Object.freeze ( this );
 	}
 }
 
 export default GpxFactory;
+
+/* --- End of file --------------------------------------------------------------------------------------------------------- */

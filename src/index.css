@@ -146,83 +146,25 @@ main.errorsOnly h1.showOnError {
 
 h2 {
     font-size:  120%;
+	font-weight: bold;
     margin-top : 1em;
     margin-left : 2em;
+	margin-bottom : 1em;
 }
-
-main.errorsOnly h2
-{
-	width: 0;
-	height: 0;
-	margin: 0;
-	padding: 0;
-	border-width: 0 !important;
-	border-style: none !important;
-	visibility: hidden;
-	transform: scale(0);
-}
-
-main.errorsOnly h2.showOnError {
-	width: auto;
-	height: auto;
-    margin-top : 1em;
-    margin-left : 2em;
-	visibility:visible;
-	transform : scale(1,1);
-}
-
-p {
-    margin-left : 4em;
-}
-P.error {
-    color: red;
-}
-
-P.error a{
-    text-decoration: underline;
-}
-
-a.josmedit:visited {
-	color : gray;
-}
-
-.josmButton{
-	margin-left: 1em;
-	background-color: rgb(41, 193, 243);
-	color: white;
-}
-
-.josmButton.josmButtonVisited {
-	background-color: gray;
-	color:black;
-}
-
-.josmButton:hover, .josmButton.josmButtonVisited:hover {
+.gpxButton {
+	font-size: 80%;
+	padding: 0.2em;
+	margin-right: 1em;
+	margin-bottom: 0.2em;
 	background-color: blue;
-	color: white;
-	cursor: pointer;
+	color:white;
 }
 
-#waitAnimation 
-{
-	margin-bottom: 0em; 
-	height: 0.2em; width: 100%; 
-	overflow: hidden;
-	visibility: hidden;
+.gpxButton.visited {
+	background-color: gray;
 }
 
-#waitAnimationBullet { 
-	background-color: red; 
-	height: 100%; 
-	width: 3em; 
-	animation: 2s linear 0s infinite alternate WaitAnimationBullet;
-}
 
 #cyDarkLight {
 	margin-left: 2em;;
 }
-
-
-
-@keyframes WaitAnimationBullet { from { margin-left: 0%; } to { margin-left: calc(100% - 1em); } }
-
