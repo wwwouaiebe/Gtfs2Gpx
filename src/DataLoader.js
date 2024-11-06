@@ -168,32 +168,7 @@ class DataLoader {
 	 */
 
 	async loadData ( network ) {
-		let fileName = '';
-		switch ( network ) {
-		case 'TECB' :
-			fileName = '../json/gtfs-B.json';
-			break;
-		case 'TECC' :
-			fileName = '../json/gtfs-C.json';
-			break;
-		case 'TECH' :
-			fileName = '../json/gtfs-H.json';
-			break;
-		case 'TECL' :
-			fileName = '../json/gtfs-L.json';
-			break;
-		case 'TECN' :
-			fileName = '../json/gtfs-N.json';
-			break;
-		case 'TECX' :
-			fileName = '../json/gtfs-N.json';
-			break;
-		case 'STIB' :
-			fileName = '../json/gtfs-STIB-MIVB.json';
-		default :
-			break;
-		}
-
+		let fileName = '../json/gtfs-' + network + '.json';
 		await this.#fetchData ( fileName );
 		this.#displayData ( );
 		console.info ( String ( this.#routeCounter ) + ' Routes found ' );
